@@ -1,0 +1,248 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@type": "CreativeWork",
+      "@id": "ro-crate-metadata.json",
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      },
+      "about": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "Data dictionary, controlled vocabulary and provenance toolkit",
+      "description": "Turns a raw research table into a documented, validated, analysis-ready dataset: mechanical profiling, a curated and frozen data dictionary with controlled vocabularies, batch validation against that dictionary, and a provenance record. Demonstration data is synthetic.",
+      "license": {
+        "@id": "https://spdx.org/licenses/MIT.html"
+      },
+      "hasPart": [
+        {
+          "@id": "DESIGN_NOTES.md"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "data/sample_manifest_batch2.csv"
+        },
+        {
+          "@id": "data/sample_manifest_raw.csv"
+        },
+        {
+          "@id": "dictgen.py"
+        },
+        {
+          "@id": "make_ro_crate.py"
+        },
+        {
+          "@id": "outputs/DATA_DICTIONARY.md"
+        },
+        {
+          "@id": "outputs/datapackage.yaml"
+        },
+        {
+          "@id": "outputs/datapackage_curated.yaml"
+        },
+        {
+          "@id": "outputs/validation_raw_after.csv"
+        },
+        {
+          "@id": "outputs/validation_report_batch2.csv"
+        },
+        {
+          "@id": "rebuild.py"
+        },
+        {
+          "@id": "test_dictgen.py"
+        },
+        {
+          "@id": "validate_sql.py"
+        }
+      ]
+    },
+    {
+      "@id": "DESIGN_NOTES.md",
+      "@type": "File",
+      "name": "DESIGN_NOTES.md",
+      "description": "Why the tool is built the way it is, including what an earlier version got wrong.",
+      "encodingFormat": "text/markdown",
+      "contentSize": 5700,
+      "sha256": "cc62f870a61c2187e0872361fe62e5ac273ccb475b4654c10b75a1271e6f5cdb"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File",
+      "name": "README.md",
+      "description": "Project overview, lifecycle and design decisions.",
+      "encodingFormat": "text/markdown",
+      "contentSize": 5175,
+      "sha256": "64ff0dc4ea54906dadbbc0f0cfc8c5a7556a7514e2b811ec3fff1d5398dc0529"
+    },
+    {
+      "@id": "data/sample_manifest_batch2.csv",
+      "@type": "File",
+      "name": "sample_manifest_batch2.csv",
+      "description": "SYNTHETIC second batch, used to demonstrate validation. Not a real cohort.",
+      "encodingFormat": "text/csv",
+      "contentSize": 2180,
+      "sha256": "289e589d885f16f759a1d616f4ffc369e9fe920b2c7aae30e82efba27a887b85",
+      "disambiguatingDescription": "Synthetic data -- contains no personal data."
+    },
+    {
+      "@id": "data/sample_manifest_raw.csv",
+      "@type": "File",
+      "name": "sample_manifest_raw.csv",
+      "description": "SYNTHETIC demonstration sample manifest. Not a real cohort.",
+      "encodingFormat": "text/csv",
+      "contentSize": 11159,
+      "sha256": "76e9420d3d530c36bab14967e226fc74d62f691b71e41e54026790981b415530",
+      "disambiguatingDescription": "Synthetic data -- contains no personal data."
+    },
+    {
+      "@id": "dictgen.py",
+      "@type": "File",
+      "name": "dictgen.py",
+      "description": "Profiling, rendering, merging and validation library for tabular data dictionaries.",
+      "encodingFormat": "text/x-python",
+      "contentSize": 26766,
+      "sha256": "2b803240793bfed25fcbad0c1b0626a19fceeff14e2e3511b876d2247613d208"
+    },
+    {
+      "@id": "make_ro_crate.py",
+      "@type": "File",
+      "name": "make_ro_crate.py",
+      "description": "Generates the RO-Crate metadata descriptor and this provenance record.",
+      "encodingFormat": "text/x-python",
+      "contentSize": 8234,
+      "sha256": "6fc7c5782b9f06f161d2225685cb2e4a71dca588c627f9c5e1226bb2c039a63a"
+    },
+    {
+      "@id": "outputs/DATA_DICTIONARY.md",
+      "@type": "File",
+      "name": "DATA_DICTIONARY.md",
+      "description": "Human-readable data dictionary: field table, quality findings, sign-off block.",
+      "encodingFormat": "text/markdown",
+      "contentSize": 4112,
+      "sha256": "9d9e9e1edc4dad5997f631f06abadfacd3b27c0a974461306e99af3ed1c11129",
+      "isBasedOn": [
+        {
+          "@id": "data/sample_manifest_raw.csv"
+        },
+        {
+          "@id": "dictgen.py"
+        },
+        {
+          "@id": "rebuild.py"
+        }
+      ]
+    },
+    {
+      "@id": "outputs/datapackage.yaml",
+      "@type": "File",
+      "name": "datapackage.yaml",
+      "description": "Machine-readable draft dictionary (Frictionless-flavoured) with TODO slots.",
+      "encodingFormat": "application/x-yaml",
+      "contentSize": 11238,
+      "sha256": "127a17db5a3aaf75a59738ff0d9cc6b3f4f86813d059330a4b45f45e2867d5b4",
+      "isBasedOn": [
+        {
+          "@id": "data/sample_manifest_raw.csv"
+        },
+        {
+          "@id": "dictgen.py"
+        },
+        {
+          "@id": "rebuild.py"
+        }
+      ]
+    },
+    {
+      "@id": "outputs/datapackage_curated.yaml",
+      "@type": "File",
+      "name": "datapackage_curated.yaml",
+      "description": "Frozen, curated, versioned dictionary. The enforced constraints live here.",
+      "encodingFormat": "application/x-yaml",
+      "contentSize": 11334,
+      "sha256": "38acf51ed9db119bca7bfd0ea549347fc38eef09c3d9d44f2f1c617de0d2f864",
+      "isBasedOn": [
+        {
+          "@id": "outputs/datapackage.yaml"
+        },
+        {
+          "@id": "rebuild.py"
+        }
+      ]
+    },
+    {
+      "@id": "outputs/validation_raw_after.csv",
+      "@type": "File",
+      "name": "validation_raw_after.csv",
+      "description": "The source table checked against its own frozen dictionary.",
+      "encodingFormat": "text/csv",
+      "contentSize": 218,
+      "sha256": "56d39f5dff020ed3caea8b815d31a717f5381950add4109c53565f4f8c03aeb0",
+      "isBasedOn": [
+        {
+          "@id": "data/sample_manifest_raw.csv"
+        },
+        {
+          "@id": "outputs/datapackage_curated.yaml"
+        },
+        {
+          "@id": "dictgen.py"
+        }
+      ]
+    },
+    {
+      "@id": "outputs/validation_report_batch2.csv",
+      "@type": "File",
+      "name": "validation_report_batch2.csv",
+      "description": "Violations found when batch 2 was checked against the frozen dictionary.",
+      "encodingFormat": "text/csv",
+      "contentSize": 393,
+      "sha256": "1b09c4d224fb408ab53c6585bf9df85ca926c05212cae5c04f4fc9df594dcda1",
+      "isBasedOn": [
+        {
+          "@id": "data/sample_manifest_batch2.csv"
+        },
+        {
+          "@id": "outputs/datapackage_curated.yaml"
+        },
+        {
+          "@id": "dictgen.py"
+        }
+      ]
+    },
+    {
+      "@id": "rebuild.py",
+      "@type": "File",
+      "name": "rebuild.py",
+      "description": "Driver that regenerates every artifact from the raw table, and holds the steward curation.",
+      "encodingFormat": "text/x-python",
+      "contentSize": 9192,
+      "sha256": "98cac88ac30eebd3a0dbc305c68ca0f7eb0e787d54aa1311090d1767063b99bc"
+    },
+    {
+      "@id": "test_dictgen.py",
+      "@type": "File",
+      "name": "test_dictgen.py",
+      "description": "Regression tests for vocabulary, required-flag and curation-merge semantics.",
+      "encodingFormat": "text/x-python",
+      "contentSize": 12849,
+      "sha256": "98c6f116d01b10f8129207bd1a5af2701a7ee6c8f191cd9d3e24aa755c77db7d"
+    },
+    {
+      "@id": "validate_sql.py",
+      "@type": "File",
+      "name": "validate_sql.py",
+      "description": "SQL expression of the dictionary constraints, run against SQLite.",
+      "encodingFormat": "text/x-python",
+      "contentSize": 6522,
+      "sha256": "4bedd27ce47eae13ff2b40fc4caf7f1c1b974b5a4a38d1cf859ae56354c9adaa"
+    }
+  ]
+}

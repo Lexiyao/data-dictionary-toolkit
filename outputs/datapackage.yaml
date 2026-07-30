@@ -1,0 +1,490 @@
+profile: tabular-data-package
+name: sample_manifest
+title: Sample manifest (demo)
+created: '2026-07-30T22:07:16+01:00'
+dictionary_version: 0.1.0-draft
+provenance:
+  generated_by: dictgen.profile_table + steward curation (rebuild.py)
+  source_artifact: sample_manifest_raw.csv
+  data_status: SYNTHETIC demonstration data -- not a real cohort
+  curation_note: 'v2.0.0: vocabularies pinned in `enum_canonical` (only pinned sets are enforced); `required`
+    set as policy; permitted ranges from SOP; no vocabulary on boolean qc_pass. sex 1/2 assumed male/female
+    pending SOP confirmation.'
+resources:
+- name: sample_manifest
+  path: data/sample_manifest_raw.csv
+  profile: tabular-data-resource
+  row_count: 120
+  schema:
+    fields:
+    - name: sample_id
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: string
+      storage_dtype: object
+      n_rows: 120
+      n_missing: 0
+      n_unique: 119
+      example_values:
+      - S0001
+      - S0002
+      - S0003
+      - S0004
+      role_candidate: identifier
+      profiled_complete: true
+      required: null
+    - name: subject_id
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: string
+      storage_dtype: object
+      n_rows: 120
+      n_missing: 2
+      n_unique: 80
+      example_values:
+      - P002
+      - P003
+      - P004
+      - P005
+      profiled_complete: false
+      required: null
+    - name: plate_well
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: string
+      storage_dtype: object
+      n_rows: 120
+      n_missing: 0
+      n_unique: 58
+      example_values:
+      - 09F
+      - 07H
+      - 06G
+      - 08B
+      profiled_complete: true
+      required: null
+    - name: tissue
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: string
+      storage_dtype: object
+      n_rows: 120
+      n_missing: 0
+      n_unique: 7
+      example_values:
+      - kidney
+      - renal cortex
+      - liver
+      - kidney cortex
+      distinct_values:
+      - Kidney
+      - 'Liver '
+      - kidney
+      - kidney cortex
+      - liver
+      - lung
+      - renal cortex
+      enum_observed:
+      - Kidney
+      - 'Liver '
+      - kidney
+      - kidney cortex
+      - liver
+      - lung
+      - renal cortex
+      enum_canonical_suggested:
+      - kidney
+      - kidney cortex
+      - liver
+      - lung
+      - renal cortex
+      value_map_suggested:
+        Kidney: kidney
+        Liver: liver
+        kidney: kidney
+        kidney cortex: kidney cortex
+        liver: liver
+        lung: lung
+        renal cortex: renal cortex
+      controlled_vocabulary: 'TODO: ontology (e.g. UBERON/MONDO/PATO) + term IDs per value'
+      profiled_complete: true
+      required: null
+    - name: disease
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: string
+      storage_dtype: object
+      n_rows: 120
+      n_missing: 4
+      n_unique: 4
+      example_values:
+      - KIRC
+      - kirc
+      - normal
+      - Normal
+      distinct_values:
+      - KIRC
+      - Normal
+      - kirc
+      - normal
+      enum_observed:
+      - KIRC
+      - Normal
+      - kirc
+      - normal
+      enum_canonical_suggested:
+      - kirc
+      - normal
+      value_map_suggested:
+        KIRC: kirc
+        Normal: normal
+        kirc: kirc
+        normal: normal
+      controlled_vocabulary: 'TODO: ontology (e.g. UBERON/MONDO/PATO) + term IDs per value'
+      profiled_complete: false
+      required: null
+    - name: sex
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: string
+      storage_dtype: object
+      n_rows: 120
+      n_missing: 5
+      n_unique: 6
+      example_values:
+      - M
+      - F
+      - male
+      - female
+      distinct_values:
+      - '1'
+      - '2'
+      - F
+      - M
+      - female
+      - male
+      enum_observed:
+      - '1'
+      - '2'
+      - F
+      - M
+      - female
+      - male
+      enum_canonical_suggested:
+      - '1'
+      - '2'
+      - f
+      - female
+      - m
+      - male
+      value_map_suggested:
+        '1': '1'
+        '2': '2'
+        F: f
+        M: m
+        female: female
+        male: male
+      controlled_vocabulary: 'TODO: ontology (e.g. UBERON/MONDO/PATO) + term IDs per value'
+      profiled_complete: false
+      required: null
+    - name: age_at_collection
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: number
+      storage_dtype: float64
+      n_rows: 120
+      n_missing: 3
+      n_unique: 49
+      example_values:
+      - 48.0
+      - 45.0
+      - 66.0
+      - 42.0
+      observed_range:
+      - 30.0
+      - 217.0
+      allowed_range: 'TODO: physically/biologically valid min,max'
+      distinct_values:
+      - 217.0
+      - 30.0
+      - 31.0
+      - 32.0
+      - 35.0
+      - 36.0
+      - 37.0
+      - 38.0
+      - 39.0
+      - 40.0
+      - 41.0
+      - 42.0
+      - 43.0
+      - 44.0
+      - 45.0
+      - 46.0
+      - 47.0
+      - 48.0
+      - 49.0
+      - 50.0
+      - 51.0
+      - 53.0
+      - 54.0
+      - 55.0
+      - 56.0
+      - 57.0
+      - 58.0
+      - 59.0
+      - 60.0
+      - 62.0
+      - 63.0
+      - 65.0
+      - 66.0
+      - 67.0
+      - 68.0
+      - 69.0
+      - 70.0
+      - 71.0
+      - 74.0
+      - 75.0
+      - 76.0
+      - 77.0
+      - 79.0
+      - 81.0
+      - 83.0
+      - 84.0
+      - 85.0
+      - 86.0
+      - 87.0
+      profiled_complete: false
+      required: null
+    - name: collection_date
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: date-like string
+      storage_dtype: object
+      n_rows: 120
+      n_missing: 0
+      n_unique: 4
+      example_values:
+      - Apr 11 2023
+      - 11/04/2023
+      - 2023/04/11
+      - '2023-04-11'
+      distinct_values:
+      - 11/04/2023
+      - '2023-04-11'
+      - 2023/04/11
+      - Apr 11 2023
+      profiled_complete: true
+      required: null
+    - name: batch
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: string
+      storage_dtype: object
+      n_rows: 120
+      n_missing: 0
+      n_unique: 3
+      example_values:
+      - B3
+      - B1
+      - B2
+      distinct_values:
+      - B1
+      - B2
+      - B3
+      enum_observed:
+      - B1
+      - B2
+      - B3
+      enum_canonical_suggested:
+      - b1
+      - b2
+      - b3
+      value_map_suggested:
+        B1: b1
+        B2: b2
+        B3: b3
+      controlled_vocabulary: 'TODO: ontology (e.g. UBERON/MONDO/PATO) + term IDs per value'
+      profiled_complete: true
+      required: null
+    - name: rin_score
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: number
+      storage_dtype: float64
+      n_rows: 120
+      n_missing: 14
+      n_unique: 42
+      example_values:
+      - 8.9
+      - 7.5
+      - 9.0
+      - 6.8
+      observed_range:
+      - -3.2
+      - 10.3
+      allowed_range: 'TODO: physically/biologically valid min,max'
+      distinct_values:
+      - -3.2
+      - 10.0
+      - 10.1
+      - 10.3
+      - 5.3
+      - 5.6
+      - 5.8
+      - 5.9
+      - 6.0
+      - 6.1
+      - 6.5
+      - 6.6
+      - 6.7
+      - 6.8
+      - 6.9
+      - 7.0
+      - 7.1
+      - 7.2
+      - 7.3
+      - 7.4
+      - 7.5
+      - 7.6
+      - 7.7
+      - 7.8
+      - 7.9
+      - 8.0
+      - 8.1
+      - 8.2
+      - 8.3
+      - 8.4
+      - 8.5
+      - 8.6
+      - 8.8
+      - 8.9
+      - 9.0
+      - 9.1
+      - 9.3
+      - 9.4
+      - 9.5
+      - 9.7
+      - 9.8
+      - 9.9
+      profiled_complete: false
+      required: null
+    - name: treatment
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: string
+      storage_dtype: object
+      n_rows: 120
+      n_missing: 0
+      n_unique: 6
+      example_values:
+      - drug_b
+      - drug_a
+      - vehicle
+      - Vehicle
+      distinct_values:
+      - Drug_A
+      - Vehicle
+      - drug_a
+      - drug_b
+      - vehicle
+      - ' vehicle'
+      enum_observed:
+      - ' vehicle'
+      - Drug_A
+      - Vehicle
+      - drug_a
+      - drug_b
+      - vehicle
+      enum_canonical_suggested:
+      - drug_a
+      - drug_b
+      - vehicle
+      value_map_suggested:
+        vehicle: vehicle
+        Drug_A: drug_a
+        Vehicle: vehicle
+        drug_a: drug_a
+        drug_b: drug_b
+      controlled_vocabulary: 'TODO: ontology (e.g. UBERON/MONDO/PATO) + term IDs per value'
+      profiled_complete: true
+      required: null
+    - name: library_prep
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: string
+      storage_dtype: object
+      n_rows: 120
+      n_missing: 0
+      n_unique: 1
+      example_values:
+      - TruSeq_stranded_mRNA
+      distinct_values:
+      - TruSeq_stranded_mRNA
+      enum_observed:
+      - TruSeq_stranded_mRNA
+      enum_canonical_suggested:
+      - truseq_stranded_mrna
+      value_map_suggested:
+        TruSeq_stranded_mRNA: truseq_stranded_mrna
+      controlled_vocabulary: 'TODO: ontology (e.g. UBERON/MONDO/PATO) + term IDs per value'
+      profiled_complete: true
+      required: null
+    - name: operator_notes
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: string
+      storage_dtype: object
+      n_rows: 120
+      n_missing: 111
+      n_unique: 1
+      example_values:
+      - repeat draw; see logbook p.12
+      distinct_values:
+      - repeat draw; see logbook p.12
+      profiled_complete: false
+      required: null
+    - name: qc_pass
+      definition: 'TODO: one sentence, in the units the instrument reports'
+      unit: null
+      logical_type: boolean
+      storage_dtype: bool
+      n_rows: 120
+      n_missing: 0
+      n_unique: 2
+      example_values:
+      - true
+      - false
+      distinct_values:
+      - false
+      - true
+      profiled_complete: true
+      required: null
+    primaryKey: []
+open_issues:
+  subject_id:
+  - 2/120 missing (1.7%)
+  tissue:
+  - leading/trailing whitespace present
+  - case/whitespace variants collapse 7 -> 5 values, e.g. [['Kidney', 'kidney'], ['Liver ', 'liver']]
+  disease:
+  - 4/120 missing (3.3%)
+  - case/whitespace variants collapse 4 -> 2 values, e.g. [['KIRC', 'kirc'], ['Normal', 'normal']]
+  sex:
+  - 5/120 missing (4.2%)
+  age_at_collection:
+  - 3/120 missing (2.5%)
+  - '1 value(s) beyond 3xIQR fence [-34, 148]: [217.0] -- confirm plausible range'
+  collection_date:
+  - 'mixed date formats: [''%Y-%m-%d'', ''%Y/%m/%d'', ''%d/%m/%Y or %m/%d/%Y (ambiguous)'', ''%b %d %Y'']'
+  rin_score:
+  - 14/120 missing (11.7%)
+  - '1 value(s) beyond 3xIQR fence [3.3, 12.4]: [-3.2] -- confirm plausible range'
+  treatment:
+  - leading/trailing whitespace present
+  - case/whitespace variants collapse 6 -> 3 values, e.g. [['Drug_A', 'drug_a'], [' vehicle', 'Vehicle',
+    'vehicle']]
+  library_prep:
+  - single constant value -- belongs in dataset-level metadata, not a column
+  operator_notes:
+  - 111/120 missing (92.5%)

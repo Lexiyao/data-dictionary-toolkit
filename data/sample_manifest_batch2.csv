@@ -1,0 +1,21 @@
+sample_id,subject_id,plate_well,tissue,disease,sex,age_at_collection,collection_date,batch,rin_score,treatment,library_prep,operator_notes,qc_pass,extra_flowcell_id
+S0201,P002,09F,kidney,kirc,female,48.0,Apr 11 2023,B3,8.9,vehicle,TruSeq_stranded_mRNA,,True,FC42
+S0202,P003,07H,kidney,kirc,male,12.0,Apr 11 2023,B3,7.5,vehicle,TruSeq_stranded_mRNA,repeat draw; see logbook p.12,True,FC42
+S0203,P004,06G,kidney,kirc,female,66.0,11/04/2023,B3,9.0,vehicle,TruSeq_stranded_mRNA,,True,FC42
+S0203,P005,08B,kidney,kirc,male,45.0,2023/04/11,B3,6.8,vehicle,TruSeq_stranded_mRNA,repeat draw; see logbook p.12,True,FC42
+S0205,P006,01C,kidney,kirc,female,42.0,2023/04/11,B1,11.4,vehicle,TruSeq_stranded_mRNA,,False,FC42
+S0206,P007,03G,kidney,kirc,male,217.0,2023/04/11,B2,8.0,vehicle,TruSeq_stranded_mRNA,,True,FC42
+S0207,P008,09A,kidney,kirc,female,62.0,Apr 11 2023,B2,7.0,vehicle,TruSeq_stranded_mRNA,,True,FC42
+S0208,,05G,kidney,kirc,male,87.0,Apr 11 2023,B1,8.5,vehicle,TruSeq_stranded_mRNA,,True,FC42
+S0209,,02G,kidney,kirc,female,58.0,11/04/2023,B2,8.1,vehicle,TruSeq_stranded_mRNA,,True,FC42
+S0210,P011,02D,kidney,kirc,male,49.0,Apr 11 2023,B1,6.8,vehicle,TruSeq_stranded_mRNA,,True,FC42
+S0211,P012,08C,kidney,kirc,female,47.0,2023-04-11,B2,7.9,vehicle,TruSeq_stranded_mRNA,,True,FC42
+S0212,P013,04C,kidney,kirc,male,54.0,11/04/2023,B1,7.4,vehicle,TruSeq_stranded_mRNA,,True,FC42
+S0213,P014,07C,kidney,kirc,female,83.0,2023-04-11,B1,8.8,vehicle,TruSeq_stranded_mRNA,,True,FC42
+S0214,P015,09D,kidney,kirc,male,50.0,11/04/2023,B1,7.1,vehicle,TruSeq_stranded_mRNA,,False,FC42
+S0215,P016,05E,kidney,kirc,female,42.0,Apr 11 2023,B3,7.3,vehicle,TruSeq_stranded_mRNA,,False,FC42
+S0216,P017,06E,kidney,kirc,male,62.0,11/04/2023,B2,9.1,vehicle,TruSeq_stranded_mRNA,,True,FC42
+S0217,P018,05H,kidney,kirc,female,74.0,2023-04-11,B2,10.3,vehicle,TruSeq_stranded_mRNA,,False,FC42
+S0218,P019,08G,kidney,kirc,male,,11/04/2023,B3,10.0,vehicle,TruSeq_stranded_mRNA,,True,FC42
+S0219,P020,07E,renal cortex,kirc,female,44.0,2023-04-11,B1,7.9,vehicle,TruSeq_stranded_mRNA,,True,FC42
+S0220,P021,04H,spleen,KIRP,male,81.0,2023-04-11,B1,8.0,vehicle,TruSeq_stranded_mRNA,repeat draw; see logbook p.12,True,FC42

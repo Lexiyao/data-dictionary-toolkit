@@ -1,0 +1,121 @@
+sample_id,subject_id,plate_well,tissue,disease,sex,age_at_collection,collection_date,batch,rin_score,treatment,library_prep,operator_notes,qc_pass
+S0001,P002,09F,kidney,KIRC,M,48.0,Apr 11 2023,B3,8.9,drug_b,TruSeq_stranded_mRNA,,True
+S0002,P003,07H,renal cortex,KIRC,F,45.0,Apr 11 2023,B3,7.5,drug_a,TruSeq_stranded_mRNA,repeat draw; see logbook p.12,True
+S0003,P004,06G,liver,kirc,M,66.0,11/04/2023,B3,9.0,vehicle,TruSeq_stranded_mRNA,,True
+S0004,P005,08B,kidney cortex,normal,F,45.0,2023/04/11,B3,6.8,drug_b,TruSeq_stranded_mRNA,repeat draw; see logbook p.12,True
+S0005,P006,01C,liver,KIRC,male,42.0,2023/04/11,B1,6.9,vehicle,TruSeq_stranded_mRNA,,False
+S0006,P007,03G,kidney,KIRC,F,217.0,2023/04/11,B2,8.0,vehicle,TruSeq_stranded_mRNA,,True
+S0007,P008,09A,kidney,KIRC,F,62.0,Apr 11 2023,B2,7.0,Vehicle,TruSeq_stranded_mRNA,,True
+S0008,P009,05G,Kidney,normal,female,87.0,Apr 11 2023,B1,8.5,drug_b,TruSeq_stranded_mRNA,,True
+S0009,P010,02G,kidney,Normal,2,58.0,11/04/2023,B2,8.1,vehicle,TruSeq_stranded_mRNA,,True
+S0010,P011,02D,Kidney,KIRC,M,49.0,Apr 11 2023,B1,6.8,drug_b,TruSeq_stranded_mRNA,,True
+S0011,P012,08C,lung,KIRC,M,47.0,2023-04-11,B2,7.9,drug_a,TruSeq_stranded_mRNA,,True
+S0012,P013,04C,renal cortex,normal,M,54.0,11/04/2023,B1,7.4,vehicle,TruSeq_stranded_mRNA,,True
+S0013,P014,07C,Kidney,KIRC,,83.0,2023-04-11,B1,8.8,drug_a,TruSeq_stranded_mRNA,,True
+S0014,P015,09D,kidney,KIRC,2,50.0,11/04/2023,B1,7.1,drug_a,TruSeq_stranded_mRNA,,False
+S0015,P016,05E,lung,KIRC,M,42.0,Apr 11 2023,B3,7.3,drug_a,TruSeq_stranded_mRNA,,False
+S0016,P017,06E,kidney cortex,kirc,,62.0,11/04/2023,B2,9.1,Drug_A,TruSeq_stranded_mRNA,,True
+S0017,P018,05H,lung,KIRC,M,74.0,2023-04-11,B2,10.3,drug_a,TruSeq_stranded_mRNA,,False
+S0018,P019,08G,kidney cortex,normal,F,,11/04/2023,B3,10.0,drug_b,TruSeq_stranded_mRNA,,True
+S0019,P020,07E,kidney cortex,normal,F,44.0,2023-04-11,B1,7.9,vehicle,TruSeq_stranded_mRNA,,True
+S0020,P021,04H,Liver ,KIRC,2,81.0,2023-04-11,B1,8.0,Drug_A,TruSeq_stranded_mRNA,repeat draw; see logbook p.12,True
+S0021,P022,05B,liver,KIRC,M,79.0,11/04/2023,B2,9.5, vehicle,TruSeq_stranded_mRNA,,True
+S0022,P023,08B,renal cortex,normal,F,50.0,11/04/2023,B3,7.7,Drug_A,TruSeq_stranded_mRNA,,True
+S0023,P024,08E,kidney cortex,KIRC,F,48.0,2023-04-11,B3,6.7,drug_b,TruSeq_stranded_mRNA,,True
+S0024,P025,02A,Liver ,KIRC,M,44.0,2023/04/11,B3,7.9,drug_b,TruSeq_stranded_mRNA,,True
+S0025,P026,05A,kidney cortex,KIRC,M,47.0,11/04/2023,B2,8.3,Vehicle,TruSeq_stranded_mRNA,,True
+S0026,P027,02E,lung,KIRC,F,81.0,2023-04-11,B3,6.9,drug_a,TruSeq_stranded_mRNA,,False
+S0027,P028,09D,kidney,Normal,2,46.0,Apr 11 2023,B1,6.0,drug_b,TruSeq_stranded_mRNA,,False
+S0028,P029,08H,kidney cortex,KIRC,female,57.0,2023-04-11,B2,,drug_b,TruSeq_stranded_mRNA,,True
+S0029,P030,08F,kidney cortex,KIRC,1,84.0,11/04/2023,B2,8.5, vehicle,TruSeq_stranded_mRNA,,True
+S0030,P031,04E,lung,Normal,female,69.0,2023-04-11,B1,7.0,drug_b,TruSeq_stranded_mRNA,,False
+S0031,,03D,kidney,normal,female,35.0,Apr 11 2023,B1,7.6, vehicle,TruSeq_stranded_mRNA,,True
+S0032,,04B,liver,KIRC,1,32.0,11/04/2023,B3,8.0, vehicle,TruSeq_stranded_mRNA,,True
+S0033,P034,09A,liver,kirc,male,41.0,Apr 11 2023,B3,8.5,Drug_A,TruSeq_stranded_mRNA,,True
+S0034,P035,01B,liver,Normal,female,79.0,Apr 11 2023,B1,7.4,drug_a,TruSeq_stranded_mRNA,,False
+S0035,P036,09F,renal cortex,KIRC,F,41.0,2023-04-11,B1,8.3, vehicle,TruSeq_stranded_mRNA,repeat draw; see logbook p.12,True
+S0036,P037,08B,lung,normal,M,46.0,2023-04-11,B1,, vehicle,TruSeq_stranded_mRNA,,True
+S0037,P038,07C,Kidney,KIRC,female,60.0,2023-04-11,B1,7.4, vehicle,TruSeq_stranded_mRNA,,True
+S0038,P039,05A,Kidney,normal,M,57.0,2023-04-11,B3,6.7,vehicle,TruSeq_stranded_mRNA,,True
+S0039,P040,06G,kidney,normal,2,32.0,11/04/2023,B1,9.0,vehicle,TruSeq_stranded_mRNA,,True
+S0040,P041,06B,kidney,Normal,F,39.0,2023-04-11,B3,7.8,Drug_A,TruSeq_stranded_mRNA,,False
+S0041,P042,05C,kidney,normal,F,87.0,Apr 11 2023,B3,7.0,drug_a,TruSeq_stranded_mRNA,,False
+S0042,P043,09H,lung,KIRC,2,53.0,11/04/2023,B1,7.4,drug_a,TruSeq_stranded_mRNA,,True
+S0043,P044,02E,Liver ,KIRC,M,,Apr 11 2023,B1,7.6,Drug_A,TruSeq_stranded_mRNA,,True
+S0044,P045,09G,kidney,normal,F,77.0,2023-04-11,B1,8.6,vehicle,TruSeq_stranded_mRNA,,True
+S0045,P046,07F,renal cortex,normal,M,55.0,2023-04-11,B3,6.0,vehicle,TruSeq_stranded_mRNA,,True
+S0046,P047,01F,kidney cortex,KIRC,,77.0,11/04/2023,B3,6.7,Vehicle,TruSeq_stranded_mRNA,,True
+S0047,P048,05A,renal cortex,KIRC,F,37.0,2023-04-11,B3,7.4,Vehicle,TruSeq_stranded_mRNA,,True
+S0048,P049,03E,liver,normal,1,56.0,2023-04-11,B1,,Drug_A,TruSeq_stranded_mRNA,,True
+S0049,P050,07E,Kidney,normal,M,76.0,2023-04-11,B3,, vehicle,TruSeq_stranded_mRNA,repeat draw; see logbook p.12,True
+S0050,P051,06G,lung,Normal,1,74.0,11/04/2023,B3,7.7,Vehicle,TruSeq_stranded_mRNA,,True
+S0051,P052,07C,kidney cortex,KIRC,female,68.0,Apr 11 2023,B2,,drug_a,TruSeq_stranded_mRNA,,True
+S0052,P053,06E,renal cortex,KIRC,male,55.0,Apr 11 2023,B1,10.1,vehicle,TruSeq_stranded_mRNA,,True
+S0053,P054,01A,renal cortex,normal,,77.0,2023/04/11,B1,7.5,vehicle,TruSeq_stranded_mRNA,,True
+S0054,P055,06D,kidney,normal,F,50.0,2023-04-11,B3,7.4,drug_a,TruSeq_stranded_mRNA,,True
+S0055,P056,06C,kidney,normal,F,67.0,11/04/2023,B2,9.1,Drug_A,TruSeq_stranded_mRNA,,False
+S0056,P057,03B,kidney cortex,NA,male,60.0,2023/04/11,B1,,Vehicle,TruSeq_stranded_mRNA,,True
+S0057,P058,04G,liver,Normal,1,46.0,2023-04-11,B3,8.5,drug_a,TruSeq_stranded_mRNA,,True
+S0058,P059,04D,liver,Normal,F,40.0,11/04/2023,B2,7.2,vehicle,TruSeq_stranded_mRNA,,True
+S0059,P060,06H,liver,normal,male,59.0,Apr 11 2023,B2,9.9, vehicle,TruSeq_stranded_mRNA,,True
+S0060,P061,04E,kidney,KIRC,M,46.0,11/04/2023,B1,9.7,drug_a,TruSeq_stranded_mRNA,,True
+S0061,P062,04E,lung,normal,F,59.0,11/04/2023,B2,-3.2,Vehicle,TruSeq_stranded_mRNA,,True
+S0062,P063,05F,liver,KIRC,female,70.0,Apr 11 2023,B2,8.6,Vehicle,TruSeq_stranded_mRNA,,True
+S0063,P064,05F,Liver ,normal,M,76.0,2023/04/11,B1,5.6,drug_a,TruSeq_stranded_mRNA,,True
+S0064,P065,09B,kidney cortex,normal,female,74.0,2023-04-11,B3,8.5,drug_a,TruSeq_stranded_mRNA,,True
+S0065,P066,06D,lung,normal,M,58.0,2023/04/11,B2,7.6,vehicle,TruSeq_stranded_mRNA,,True
+S0066,P067,04B,kidney,kirc,,31.0,Apr 11 2023,B1,8.3,Drug_A,TruSeq_stranded_mRNA,,True
+S0067,P068,01D,kidney,KIRC,F,38.0,2023-04-11,B1,8.6,vehicle,TruSeq_stranded_mRNA,repeat draw; see logbook p.12,True
+S0068,P069,08A,kidney,kirc,F,71.0,Apr 11 2023,B1,7.4,drug_b,TruSeq_stranded_mRNA,,True
+S0069,P070,04H,kidney,KIRC,female,63.0,2023/04/11,B3,5.9,vehicle,TruSeq_stranded_mRNA,,False
+S0070,P071,09B,kidney,Normal,F,77.0,2023/04/11,B3,8.2,Vehicle,TruSeq_stranded_mRNA,,False
+S0071,P072,01F,kidney,normal,female,57.0,11/04/2023,B3,7.0,vehicle,TruSeq_stranded_mRNA,,True
+S0072,P073,01C,renal cortex,KIRC,M,54.0,2023-04-11,B2,7.4,drug_b,TruSeq_stranded_mRNA,,True
+S0073,P074,05G,kidney,normal,F,42.0,2023-04-11,B3,,Vehicle,TruSeq_stranded_mRNA,,False
+S0074,P075,01F,renal cortex,normal,F,31.0,2023/04/11,B1,7.4,drug_a,TruSeq_stranded_mRNA,,True
+S0075,P076,05B,kidney,KIRC,2,36.0,Apr 11 2023,B2,5.3,drug_b,TruSeq_stranded_mRNA,,True
+S0076,P077,08G,liver,Normal,M,68.0,2023/04/11,B2,9.1,drug_b,TruSeq_stranded_mRNA,,True
+S0077,P078,05H,kidney,Normal,F,62.0,11/04/2023,B2,,vehicle,TruSeq_stranded_mRNA,,True
+S0078,P079,06H,Kidney,KIRC,male,42.0,Apr 11 2023,B2,9.0,drug_a,TruSeq_stranded_mRNA,,True
+S0079,P080,09E,lung,KIRC,F,49.0,Apr 11 2023,B3,10.0,drug_a,TruSeq_stranded_mRNA,,True
+S0080,P001,03B,kidney cortex,normal,M,66.0,2023-04-11,B3,7.8,Drug_A,TruSeq_stranded_mRNA,repeat draw; see logbook p.12,False
+S0081,P002,06B,liver,NA,F,50.0,2023-04-11,B3,5.8,Vehicle,TruSeq_stranded_mRNA,repeat draw; see logbook p.12,True
+S0082,P003,07H,liver,KIRC,M,50.0,Apr 11 2023,B1,,Vehicle,TruSeq_stranded_mRNA,,True
+S0083,P004,03E,renal cortex,normal,M,44.0,2023-04-11,B3,6.5,vehicle,TruSeq_stranded_mRNA,,True
+S0084,P005,01B,kidney,Normal,2,66.0,Apr 11 2023,B3,7.2,vehicle,TruSeq_stranded_mRNA,,True
+S0085,P006,04H,renal cortex,Normal,M,81.0,2023-04-11,B3,7.9,drug_a,TruSeq_stranded_mRNA,,True
+S0086,P007,09F,kidney,KIRC,F,43.0,2023-04-11,B2,5.6,vehicle,TruSeq_stranded_mRNA,,True
+S0087,P008,06E,liver,KIRC,female,45.0,11/04/2023,B1,8.2,vehicle,TruSeq_stranded_mRNA,,True
+S0088,P009,01D,lung,NA,female,56.0,11/04/2023,B3,6.1,Vehicle,TruSeq_stranded_mRNA,,True
+S0089,P010,09D,Liver ,KIRC,F,,11/04/2023,B1,8.1,vehicle,TruSeq_stranded_mRNA,,True
+S0090,P011,02B,kidney,KIRC,1,59.0,2023-04-11,B2,7.7,vehicle,TruSeq_stranded_mRNA,,True
+S0091,P012,07A,Kidney,normal,F,81.0,Apr 11 2023,B2,7.5,drug_b,TruSeq_stranded_mRNA,,False
+S0092,P013,09H,Kidney,kirc,male,65.0,Apr 11 2023,B3,7.7, vehicle,TruSeq_stranded_mRNA,,False
+S0093,P014,06D,kidney,normal,1,37.0,2023/04/11,B1,7.2,vehicle,TruSeq_stranded_mRNA,,False
+S0094,P015,07E,renal cortex,KIRC,male,40.0,Apr 11 2023,B3,7.1,Drug_A,TruSeq_stranded_mRNA,,True
+S0095,P016,05C,liver,Normal,male,32.0,Apr 11 2023,B1,5.9,vehicle,TruSeq_stranded_mRNA,,True
+S0096,P017,05G,Kidney,KIRC,F,85.0,Apr 11 2023,B2,7.8,vehicle,TruSeq_stranded_mRNA,,False
+S0097,P018,01A,Liver ,normal,F,48.0,11/04/2023,B1,9.8,drug_b,TruSeq_stranded_mRNA,,True
+S0098,P019,07C,liver,KIRC,F,45.0,2023/04/11,B1,10.0,drug_b,TruSeq_stranded_mRNA,,False
+S0099,P020,08A,kidney,kirc,female,79.0,Apr 11 2023,B1,9.3,drug_a,TruSeq_stranded_mRNA,,False
+S0099,P021,09A,liver,KIRC,F,46.0,2023/04/11,B3,,vehicle,TruSeq_stranded_mRNA,,True
+S0101,P022,04H,Liver ,KIRC,F,41.0,Apr 11 2023,B2,,Vehicle,TruSeq_stranded_mRNA,,True
+S0102,P023,01F,kidney,KIRC,female,43.0,2023/04/11,B3,9.4,vehicle,TruSeq_stranded_mRNA,,True
+S0103,P024,07D,renal cortex,normal,F,51.0,11/04/2023,B1,7.7,vehicle,TruSeq_stranded_mRNA,,True
+S0104,P025,01E,renal cortex,kirc,F,32.0,2023/04/11,B1,7.7,vehicle,TruSeq_stranded_mRNA,,True
+S0105,P026,04G,renal cortex,KIRC,1,66.0,2023-04-11,B3,7.5,vehicle,TruSeq_stranded_mRNA,,True
+S0106,P027,07C,kidney,NA,F,53.0,Apr 11 2023,B3,,drug_a,TruSeq_stranded_mRNA,,True
+S0107,P028,01E,liver,Normal,1,86.0,Apr 11 2023,B2,7.3,vehicle,TruSeq_stranded_mRNA,,True
+S0108,P029,03F,renal cortex,Normal,female,74.0,2023/04/11,B1,7.7,vehicle,TruSeq_stranded_mRNA,,False
+S0109,P030,08C,liver,KIRC,F,51.0,Apr 11 2023,B3,6.6,drug_b,TruSeq_stranded_mRNA,,True
+S0110,P031,09E,liver,KIRC,female,70.0,11/04/2023,B2,7.4,Vehicle,TruSeq_stranded_mRNA,,True
+S0111,P032,05G,Kidney,KIRC,M,76.0,11/04/2023,B1,10.3,Vehicle,TruSeq_stranded_mRNA,,True
+S0112,P033,08H,liver,KIRC,F,39.0,2023/04/11,B3,7.7,vehicle,TruSeq_stranded_mRNA,repeat draw; see logbook p.12,True
+S0113,P034,09B,Liver ,KIRC,1,37.0,11/04/2023,B2,7.5,Drug_A,TruSeq_stranded_mRNA,,True
+S0114,P035,04H,Liver ,normal,F,36.0,2023-04-11,B2,8.4,drug_a,TruSeq_stranded_mRNA,,True
+S0115,P036,03A,kidney,KIRC,F,30.0,11/04/2023,B2,8.6,drug_a,TruSeq_stranded_mRNA,,True
+S0116,P037,06G,kidney,KIRC,male,47.0,2023/04/11,B1,6.6,drug_a,TruSeq_stranded_mRNA,,True
+S0117,P038,07G,liver,Normal,male,75.0,11/04/2023,B2,7.6,vehicle,TruSeq_stranded_mRNA,,True
+S0118,P039,06B,kidney,kirc,F,74.0,2023/04/11,B1,,Vehicle,TruSeq_stranded_mRNA,,True
+S0119,P040,08D,renal cortex,KIRC,F,50.0,2023/04/11,B2,8.1,drug_a,TruSeq_stranded_mRNA,,True
+S0120,P041,08G,lung,normal,M,57.0,11/04/2023,B1,,drug_b,TruSeq_stranded_mRNA,,True

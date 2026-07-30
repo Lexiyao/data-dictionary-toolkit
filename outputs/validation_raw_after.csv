@@ -1,0 +1,4 @@
+severity,field,check,detail
+error,subject_id,required,2 missing value(s)
+error,age_at_collection,range,"1 value(s) outside [18, 100]: [217.0]"
+error,rin_score,range,"4 value(s) outside [1.0, 10.0]: [-3.2, 10.1, 10.3]"

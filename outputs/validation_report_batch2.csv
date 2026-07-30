@@ -1,0 +1,7 @@
+severity,field,check,detail
+warning,extra_flowcell_id,column_known,column not in dictionary
+error,subject_id,required,2 missing value(s)
+error,tissue,enum,values outside vocabulary: ['spleen']
+error,disease,enum,values outside vocabulary: ['KIRP']
+error,age_at_collection,range,"2 value(s) outside [18, 100]: [12.0, 217.0]"
+error,rin_score,range,"2 value(s) outside [1.0, 10.0]: [10.3, 11.4]"
