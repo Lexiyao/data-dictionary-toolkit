@@ -70,8 +70,8 @@
       "name": "DESIGN_NOTES.md",
       "description": "Why the tool is built the way it is, including what an earlier version got wrong.",
       "encodingFormat": "text/markdown",
-      "contentSize": 5700,
-      "sha256": "cc62f870a61c2187e0872361fe62e5ac273ccb475b4654c10b75a1271e6f5cdb"
+      "contentSize": 5678,
+      "sha256": "4709c8a6bcd9404c01853a4755e4b88b86b188479b66e5f2204854454ea72d5e"
     },
     {
       "@id": "README.md",
@@ -79,8 +79,8 @@
       "name": "README.md",
       "description": "Project overview, lifecycle and design decisions.",
       "encodingFormat": "text/markdown",
-      "contentSize": 5175,
-      "sha256": "64ff0dc4ea54906dadbbc0f0cfc8c5a7556a7514e2b811ec3fff1d5398dc0529"
+      "contentSize": 5157,
+      "sha256": "651d3b1b78b06fb7ca8c0a2baeaa92d8d266cdb149adcb4e9b02c9fd14e04430"
     },
     {
       "@id": "data/sample_manifest_batch2.csv",

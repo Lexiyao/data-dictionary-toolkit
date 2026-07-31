@@ -1,7 +1,7 @@
 # Data dictionary, controlled vocabulary and provenance toolkit
 
 Turn a raw research table into a **documented, validated, analysis-ready
-dataset** — and keep it that way as new batches arrive.
+dataset**, and keep it that way as new batches arrive.
 
 The demo data is **synthetic** (a renal-cancer sample manifest). No real cohort
 data, and no personal data, is in this repository.
@@ -30,7 +30,7 @@ validation report (one row per violation)
 ```
 
 `merge_curated()` refreshes profiled statistics when new data arrives, preserves
-every curated slot, and reports drift — new or removed fields, type changes, and
+every curated slot, and reports drift: new or removed fields, type changes, and
 values the pinned vocabulary does not cover. It cannot widen an enforced
 vocabulary; that takes a steward and a version bump.
 
@@ -98,14 +98,14 @@ outputs/            generated: dictionaries, validation reports, provenance
 
 ## Design
 
-The reasoning behind the main decisions — and the bugs that taught me each one —
+The reasoning behind the main decisions (and the bugs that taught me each one)
 is in [DESIGN_NOTES.md](DESIGN_NOTES.md). The short version:
 
 - **The profiler proposes; only a steward disposes.** Every enforced constraint
   lives in a curated slot the profiler never writes to.
 - **A suggestion never gates validation.** When the profiler's *suggested*
   vocabulary was enforceable, re-profiling silently widened the dictionary to
-  admit whatever had just arrived — while the validation report stayed clean.
+  admit whatever had just arrived, while the validation report stayed clean.
 - **`required` is a policy assertion**, not an artefact of whichever extract you
   happened to profile.
 - **Vocabularies need an explicit raw-to-canonical map**, not case folding.
@@ -121,4 +121,4 @@ OMOP/FHIR-style concept mapping for controlled vocabularies.
 
 ## Licence
 
-MIT — see [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).

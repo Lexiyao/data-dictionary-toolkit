@@ -22,10 +22,10 @@ never writes to those slots:
 This was the worst bug in the project, and the most instructive.
 
 `enum_canonical_suggested` is profiler output, so `merge_curated` refreshes it
-from each new batch — correct in isolation. But `_canonical_terms` used to fall
-back to it when no `enum_canonical` was pinned. Those two reasonable decisions
-combined into an unreasonable system: **the refreshed suggestion became the
-enforced vocabulary.**
+from each new batch, which is correct in isolation. But `_canonical_terms` used
+to fall back to it when no `enum_canonical` was pinned. Those two reasonable
+decisions combined into an unreasonable system: **the refreshed suggestion
+became the enforced vocabulary.**
 
 Concretely. A curated `batch` vocabulary of `[b1, b2, b3]` meets a new extract
 containing `B9`. Re-profile, merge, freeze. The artifact now permits `B9`, and
@@ -51,14 +51,13 @@ by policy" with "this extract happened to be complete". A donor-link column
 appears in one batch with two missing values and silently becomes optional; a
 constraint flips between batches with nobody deciding anything.
 
-The profiler records `profiled_complete` — what it saw — and leaves `required`
-as `None` until a human sets it. `validate()` skips unset flags rather than
-guessing.
+The profiler records `profiled_complete` (what it saw) and leaves `required` as
+`None` until a human sets it. `validate()` skips unset flags; it does not guess.
 
 ## Vocabularies need a raw-to-canonical map
 
 `M`, `1` and `male` are one concept. `renal cortex` and `kidney cortex` may be
-one concept, or may not — only a domain expert can say. Case-folding alone
+one concept, or may not. Only a domain expert can say. Case-folding alone
 cannot express any of that, and a vocabulary built by case-folding will reject
 the very table it was derived from.
 
@@ -77,7 +76,7 @@ string-to-integer comparison silently matches nothing.
 Values and vocabulary terms therefore pass through one normalisation function.
 Integral floats lose the decimal tail; booleans fold to `true`/`false` so a
 0/1 database export still compares equal. The profiler no longer proposes
-vocabularies for numeric or boolean columns at all — a quantity is not a
+vocabularies for numeric or boolean columns at all: a quantity is not a
 vocabulary, and a flag is not a vocabulary.
 
 ## Report, never repair
@@ -87,25 +86,25 @@ it upstream and then freezes the dictionary. Silent repair moves the error from
 the data, where someone might notice it, into the tool, where nobody will.
 
 The same instinct applies to what the tool *cannot* check. If a column has too
-many distinct values to enumerate, `merge_curated` says so explicitly rather
-than returning a reassuring empty diff — an earlier version reported "no drift"
-on a column with 120 unmapped values, because the field it consulted had
-vanished when the column stopped looking like an enum.
+many distinct values to enumerate, `merge_curated` says so explicitly, and does
+not return a reassuring empty diff. An earlier version reported "no drift" on a
+column with 120 unmapped values, because the field it consulted had vanished
+when the column stopped looking like an enum.
 
 ## Two implementations, cross-checked
 
 The constraints are implemented twice: once in pandas (`dictgen.validate`) and
 once as generated SQL (`validate_sql.validate_sql`). Running both on the same
-data and diffing the reports is a cheap, strong correctness check — and it is
-how the boolean 0/1 problem was found, because the two implementations
-disagreed before either was obviously wrong.
+data and diffing the reports is a cheap, strong correctness check. It is how the
+boolean 0/1 problem was found, because the two implementations disagreed before
+either was obviously wrong.
 
 ## What this does not do
 
 - Single-table, field-level only. No referential integrity across tables, and
   no cross-field rules such as `date_of_death >= date_of_birth`.
 - Profiling is row-wise Python. Fine to ~10^5 rows; sample larger tables.
-- Ontology term IDs are hand-entered and unverified — the tool does not resolve
+- Ontology term IDs are hand-entered and unverified: the tool does not resolve
   them against the source ontology.
 - Semantic decisions in the demo curation are assumptions, and are labelled as
   such. `sex` coded 1/2 is mapped assuming 1=male, 2=female; in real use that

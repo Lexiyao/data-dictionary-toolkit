@@ -1,6 +1,6 @@
 # Provenance record
 
-Generated 2026-07-30T21:07:22+00:00 by `make_ro_crate.py`.
+Generated 2026-07-31T01:54:14+00:00 by `make_ro_crate.py`.
 
 This records what the repository can prove: each artifact's SHA-256, its size, and the inputs it was derived from. It makes no claim about the execution environment, which a checkout cannot capture -- see `requirements.txt` for the dependencies the code was written against.
 
@@ -10,8 +10,8 @@ This records what the repository can prove: each artifact's SHA-256, its size, a
 
 | File | SHA-256 (first 16) | Bytes | Derived from |
 |---|---|---|---|
-| `DESIGN_NOTES.md` | `cc62f870a61c2187` | 5700 | -- |
-| `README.md` | `64ff0dc4ea54906d` | 5175 | -- |
+| `DESIGN_NOTES.md` | `4709c8a6bcd9404c` | 5678 | -- |
+| `README.md` | `651d3b1b78b06fb7` | 5157 | -- |
 | `data/sample_manifest_batch2.csv` | `289e589d885f16f7` | 2180 | -- |
 | `data/sample_manifest_raw.csv` | `76e9420d3d530c36` | 11159 | -- |
 | `dictgen.py` | `2b803240793bfed2` | 26766 | -- |
