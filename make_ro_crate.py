@@ -28,7 +28,7 @@ CONTEXT = "https://w3id.org/ro/crate/1.1/context"
 DESCRIPTIONS = {
     "dictgen.py": "Profiling, rendering, merging and validation library for tabular data dictionaries.",
     "validate_sql.py": "SQL expression of the dictionary constraints, run against SQLite.",
-    "test_dictgen.py": "Regression tests for vocabulary, required-flag and curation-merge semantics.",
+    "test_dictgen.py": "Regression tests for vocabulary, required-flag, curation-merge and dtype-independent text-check semantics.",
     "rebuild.py": "Driver that regenerates every artifact from the raw table, and holds the steward curation.",
     "make_ro_crate.py": "Generates the RO-Crate metadata descriptor and this provenance record.",
     "README.md": "Project overview, lifecycle and design decisions.",

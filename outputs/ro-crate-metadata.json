@@ -70,8 +70,8 @@
       "name": "DESIGN_NOTES.md",
       "description": "Why the tool is built the way it is, including what an earlier version got wrong.",
       "encodingFormat": "text/markdown",
-      "contentSize": 6743,
-      "sha256": "9acd24ffa31697482ab232b035e4aaf14b72565dbd4754bf2d426a7f6515e244"
+      "contentSize": 7241,
+      "sha256": "157aa4190902a34fe8c92aa427ed7d7e76cede84b7c19b8e87c26175f1458833"
     },
     {
       "@id": "README.md",
@@ -108,8 +108,8 @@
       "name": "dictgen.py",
       "description": "Profiling, rendering, merging and validation library for tabular data dictionaries.",
       "encodingFormat": "text/x-python",
-      "contentSize": 27253,
-      "sha256": "c78b844408d5e98ba3691d0b4f56f3268aafd3665406319450f4e9f7afb068a1"
+      "contentSize": 27441,
+      "sha256": "2cd47c4e92b647e257885835cbb16d1c7c547e89f9a4fb434dae0439bd320064"
     },
     {
       "@id": "make_ro_crate.py",
@@ -117,8 +117,8 @@
       "name": "make_ro_crate.py",
       "description": "Generates the RO-Crate metadata descriptor and this provenance record.",
       "encodingFormat": "text/x-python",
-      "contentSize": 8234,
-      "sha256": "6fc7c5782b9f06f161d2225685cb2e4a71dca588c627f9c5e1226bb2c039a63a"
+      "contentSize": 8264,
+      "sha256": "97b0e77c78e4960787ee3a9af7ea5539d04b51d1fad6bc3c18071a3dee819258"
     },
     {
       "@id": "outputs/DATA_DICTIONARY.md",
@@ -230,10 +230,10 @@
       "@id": "test_dictgen.py",
       "@type": "File",
       "name": "test_dictgen.py",
-      "description": "Regression tests for vocabulary, required-flag and curation-merge semantics.",
+      "description": "Regression tests for vocabulary, required-flag, curation-merge and dtype-independent text-check semantics.",
       "encodingFormat": "text/x-python",
-      "contentSize": 13763,
-      "sha256": "db2bcb76a33b451c612af2c977a5c1cd247ac3f7989dc7f7847c8abd081923b3"
+      "contentSize": 14103,
+      "sha256": "fa6faddc8e2a98ea1731d7276cdccadc487d5f49c2be450f808c790667e35dcf"
     },
     {
       "@id": "validate_sql.py",

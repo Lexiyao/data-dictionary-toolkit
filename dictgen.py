@@ -114,16 +114,6 @@ def _plain_list(values) -> list:
     return [_plain(v) for v in values]
 
 
-def _is_text(s: pd.Series) -> bool:
-    """Whether a column holds text, whatever dtype pandas stores it in.
-
-    pandas 2 reads text as `object`; pandas 3 reads it as `str`. Every blank-cell,
-    whitespace, case-variant, date-format and sentinel check used to be gated on
-    `s.dtype == object`, so under pandas 3 none of them ran and the report came
-    back clean. A check that did not run must not look like a check that passed."""
-    return pd.api.types.is_object_dtype(s) or pd.api.types.is_string_dtype(s)
-
-
 def _norm_token(value) -> str:
     """Render any value as the canonical string token used for vocabulary
     comparison. Numeric codes are the trap here: a `sex` column coded 1/2 is
@@ -162,6 +152,20 @@ def _to_canonical(value, value_map: dict | None, logical_type: str | None = None
             if _norm_token(raw_key).lower() == lowered:
                 return _norm_token(canon)
     return token.lower()
+
+
+def _is_text(s: pd.Series) -> bool:
+    """Whether a column holds text, whatever dtype pandas stores it in: object,
+    any pandas string dtype, or a categorical whose categories are strings.
+
+    pandas 2 reads text as `object`; pandas 3 reads it as `str`. The blank-cell
+    filter, the prose test and every hygiene flag in the text block (whitespace,
+    case variants, mixed date formats, zero-padded codes, sentinels) used to be
+    gated on `s.dtype == object`, so under pandas 3 none of them ran and the text
+    findings silently vanished. A check that did not run must not look like a
+    check that passed.
+    """
+    return pd.api.types.is_object_dtype(s) or pd.api.types.is_string_dtype(s)
 
 
 def _logical_type(s: pd.Series, nonnull: pd.Series) -> str:

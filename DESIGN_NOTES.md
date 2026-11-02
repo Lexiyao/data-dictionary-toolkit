@@ -83,19 +83,27 @@ vocabulary, and a flag is not a vocabulary.
 
 pandas 3 reads text columns as the `str` dtype, where pandas 2 used `object`.
 Every text check in the profiler and the validator was gated on
-`s.dtype == object`, so under pandas 3 none of them ran: blank cells stopped
-counting as missing, and the whitespace, case-variant, mixed-date-format and
-sentinel flags disappeared. `rebuild.py` exited 0 and the findings section of
-the dictionary simply got shorter. A blank but required `subject_id` validated
-clean. `requirements.txt` says `pandas>=2.0`, so this is what a fresh install
-got.
+`s.dtype == object`, so under pandas 3 none of them ran: the blank-cell filter,
+the prose test, and every hygiene flag in the text block (whitespace, case
+variants, mixed date formats, zero-padded codes, sentinels). `requirements.txt`
+says `pandas>=2.0`, so this is what a fresh install got.
+
+On the demo data the damage was visible only in the dictionary: `rebuild.py`
+exited 0 and the tissue, disease, collection_date and treatment findings were
+gone from `DATA_DICTIONARY.md`. The validation reports did not change, because
+the two missing `subject_id` values are empty CSV fields, which `read_csv`
+turns into NaN under either version, and NaN is counted without consulting the
+dtype. A blank *string* in a required column is a different matter: it
+validated clean, and `test_text_checks_run_whatever_dtype_carries_the_strings`
+pins that case.
 
 That is the same failure as the dictionary that unfroze itself: a clean report
 produced by a check that did not run. The gate is now `_is_text()`, which asks
-whether the column holds text (object or any pandas string dtype) rather than
-which dtype this pandas version chose for it. `storage_dtype` still records
-the dtype as seen, so a dictionary rebuilt under pandas 3 shows `str` where an
-older one shows `object`; that is a true statement about storage, not drift.
+whether the column holds text (object, any pandas string dtype, or a
+categorical whose categories are strings) rather than which dtype this pandas
+version chose for it. `storage_dtype` still records the dtype as seen, so a
+dictionary rebuilt under pandas 3 shows `str` where an older one shows
+`object`; that is a true statement about storage, not drift.
 
 ## Report, never repair
 

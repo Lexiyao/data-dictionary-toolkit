@@ -1,5 +1,6 @@
-"""Regression tests for the three fixes: enum value_map, required-as-assertion,
-merge_curated preservation. Runs under pytest, or directly: `python test_dictgen.py`."""
+"""Regression tests. Each one pins a bug an earlier version shipped: enum value_map,
+required-as-assertion, merge_curated preservation, dtype-independent text checks.
+Runs under pytest, or directly: `python test_dictgen.py`."""
 import pandas as pd
 import dictgen as dg
 
@@ -212,15 +213,19 @@ def test_text_checks_run_whatever_dtype_carries_the_strings():
     # pandas 3 reads text as the `str` dtype, pandas 2 as `object`. The text
     # checks were gated on `dtype == object`, so under pandas 3 a blank required
     # cell validated clean and every hygiene flag vanished, with exit code 0.
-    # `dtype="string"` reproduces that on either major version.
-    df = pd.DataFrame({"t": pd.array(["Kidney", "kidney ", " ", "kidney"], dtype="string")})
-    f = dg.profile_table(df)[0]
-    assert f["n_missing"] == 1, "a blank cell is missing whichever dtype holds it"
-    assert any("empty-string" in m for m in f["issues"])
-    assert any("variants collapse" in m for m in f["issues"])
-    assert any("whitespace present" in m for m in f["issues"])
-    report = dg.validate(df, _pkg([{"name": "t", "required": True}]))
-    assert (report["check"] == "required").any(), "blank required cell must be reported"
+    # A plain list gives whatever the installed pandas reads CSV text as;
+    # `dtype="string"` reproduces the failure on either major version; a
+    # categorical with string categories is text too.
+    values = ["Kidney", "kidney ", " ", "kidney"]
+    for col in (values, pd.array(values, dtype="string"), pd.Categorical(values)):
+        df = pd.DataFrame({"t": col})
+        f = dg.profile_table(df)[0]
+        assert f["n_missing"] == 1, f"a blank cell is missing whichever dtype holds it ({df['t'].dtype})"
+        assert any("empty-string" in m for m in f["issues"])
+        assert any("variants collapse" in m for m in f["issues"])
+        assert any("whitespace present" in m for m in f["issues"])
+        report = dg.validate(df, _pkg([{"name": "t", "required": True}]))
+        assert (report["check"] == "required").any(), f"blank required cell must be reported ({df['t'].dtype})"
 
 
 def test_zero_row_batch_is_not_silently_clean():

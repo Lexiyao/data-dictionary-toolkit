@@ -1,4 +1,5 @@
-pandas>=2.0        # 2.x reads text as object, 3.x as str; both are tested
+# pandas 2.x reads text columns as object, 3.x as str; dictgen handles both
+pandas>=2.0
 numpy>=1.24
 PyYAML>=6.0
 
