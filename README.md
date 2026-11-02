@@ -42,7 +42,7 @@ pip install -r requirements.txt
 python rebuild.py         # regenerate every artifact in outputs/
 python validate_sql.py    # run the same constraints as SQL, and diff the reports
 python make_ro_crate.py   # regenerate the provenance record + RO-Crate
-python test_dictgen.py    # 28 regression tests (or: pytest)
+python test_dictgen.py    # 29 regression tests (or: pytest)
 ```
 
 ## Library use
@@ -91,7 +91,7 @@ dictgen.py          profile / render / merge / validate — the library
 validate_sql.py     the same constraints as generated SQL, run on SQLite
 rebuild.py          driver; also holds the steward curation as reviewable data
 make_ro_crate.py    provenance record + RO-Crate descriptor
-test_dictgen.py     28 regression tests
+test_dictgen.py     29 regression tests
 data/               synthetic demonstration manifests
 outputs/            generated: dictionaries, validation reports, provenance
 ```

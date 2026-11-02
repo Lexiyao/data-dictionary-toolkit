@@ -70,8 +70,8 @@
       "name": "DESIGN_NOTES.md",
       "description": "Why the tool is built the way it is, including what an earlier version got wrong.",
       "encodingFormat": "text/markdown",
-      "contentSize": 5678,
-      "sha256": "4709c8a6bcd9404c01853a4755e4b88b86b188479b66e5f2204854454ea72d5e"
+      "contentSize": 6743,
+      "sha256": "9acd24ffa31697482ab232b035e4aaf14b72565dbd4754bf2d426a7f6515e244"
     },
     {
       "@id": "README.md",
@@ -80,7 +80,7 @@
       "description": "Project overview, lifecycle and design decisions.",
       "encodingFormat": "text/markdown",
       "contentSize": 5157,
-      "sha256": "651d3b1b78b06fb7ca8c0a2baeaa92d8d266cdb149adcb4e9b02c9fd14e04430"
+      "sha256": "399b9ebb2aaa8729f5237a59f96ff729f11dcd292c6ff1a85ebdbc9f157836d9"
     },
     {
       "@id": "data/sample_manifest_batch2.csv",
@@ -108,8 +108,8 @@
       "name": "dictgen.py",
       "description": "Profiling, rendering, merging and validation library for tabular data dictionaries.",
       "encodingFormat": "text/x-python",
-      "contentSize": 26766,
-      "sha256": "2b803240793bfed25fcbad0c1b0626a19fceeff14e2e3511b876d2247613d208"
+      "contentSize": 27253,
+      "sha256": "c78b844408d5e98ba3691d0b4f56f3268aafd3665406319450f4e9f7afb068a1"
     },
     {
       "@id": "make_ro_crate.py",
@@ -232,8 +232,8 @@
       "name": "test_dictgen.py",
       "description": "Regression tests for vocabulary, required-flag and curation-merge semantics.",
       "encodingFormat": "text/x-python",
-      "contentSize": 12849,
-      "sha256": "98c6f116d01b10f8129207bd1a5af2701a7ee6c8f191cd9d3e24aa755c77db7d"
+      "contentSize": 13763,
+      "sha256": "db2bcb76a33b451c612af2c977a5c1cd247ac3f7989dc7f7847c8abd081923b3"
     },
     {
       "@id": "validate_sql.py",

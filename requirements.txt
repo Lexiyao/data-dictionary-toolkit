@@ -1,4 +1,4 @@
-pandas>=2.0
+pandas>=2.0        # 2.x reads text as object, 3.x as str; both are tested
 numpy>=1.24
 PyYAML>=6.0
 

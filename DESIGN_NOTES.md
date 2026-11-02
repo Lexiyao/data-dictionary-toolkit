@@ -79,6 +79,24 @@ Integral floats lose the decimal tail; booleans fold to `true`/`false` so a
 vocabularies for numeric or boolean columns at all: a quantity is not a
 vocabulary, and a flag is not a vocabulary.
 
+## Ask whether a column is text, not which dtype holds it
+
+pandas 3 reads text columns as the `str` dtype, where pandas 2 used `object`.
+Every text check in the profiler and the validator was gated on
+`s.dtype == object`, so under pandas 3 none of them ran: blank cells stopped
+counting as missing, and the whitespace, case-variant, mixed-date-format and
+sentinel flags disappeared. `rebuild.py` exited 0 and the findings section of
+the dictionary simply got shorter. A blank but required `subject_id` validated
+clean. `requirements.txt` says `pandas>=2.0`, so this is what a fresh install
+got.
+
+That is the same failure as the dictionary that unfroze itself: a clean report
+produced by a check that did not run. The gate is now `_is_text()`, which asks
+whether the column holds text (object or any pandas string dtype) rather than
+which dtype this pandas version chose for it. `storage_dtype` still records
+the dtype as seen, so a dictionary rebuilt under pandas 3 shows `str` where an
+older one shows `object`; that is a true statement about storage, not drift.
+
 ## Report, never repair
 
 The tool never silently fixes data. It reports what it finds; a human resolves

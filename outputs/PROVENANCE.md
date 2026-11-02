@@ -1,6 +1,6 @@
 # Provenance record
 
-Generated 2026-07-31T01:54:14+00:00 by `make_ro_crate.py`.
+Generated 2026-11-02T15:47:46+00:00 by `make_ro_crate.py`.
 
 This records what the repository can prove: each artifact's SHA-256, its size, and the inputs it was derived from. It makes no claim about the execution environment, which a checkout cannot capture -- see `requirements.txt` for the dependencies the code was written against.
 
@@ -10,11 +10,11 @@ This records what the repository can prove: each artifact's SHA-256, its size, a
 
 | File | SHA-256 (first 16) | Bytes | Derived from |
 |---|---|---|---|
-| `DESIGN_NOTES.md` | `4709c8a6bcd9404c` | 5678 | -- |
-| `README.md` | `651d3b1b78b06fb7` | 5157 | -- |
+| `DESIGN_NOTES.md` | `9acd24ffa3169748` | 6743 | -- |
+| `README.md` | `399b9ebb2aaa8729` | 5157 | -- |
 | `data/sample_manifest_batch2.csv` | `289e589d885f16f7` | 2180 | -- |
 | `data/sample_manifest_raw.csv` | `76e9420d3d530c36` | 11159 | -- |
-| `dictgen.py` | `2b803240793bfed2` | 26766 | -- |
+| `dictgen.py` | `c78b844408d5e98b` | 27253 | -- |
 | `make_ro_crate.py` | `6fc7c5782b9f06f1` | 8234 | -- |
 | `outputs/DATA_DICTIONARY.md` | `9d9e9e1edc4dad59` | 4112 | `data/sample_manifest_raw.csv`, `dictgen.py`, `rebuild.py` |
 | `outputs/datapackage.yaml` | `127a17db5a3aaf75` | 11238 | `data/sample_manifest_raw.csv`, `dictgen.py`, `rebuild.py` |
@@ -22,7 +22,7 @@ This records what the repository can prove: each artifact's SHA-256, its size, a
 | `outputs/validation_raw_after.csv` | `56d39f5dff020ed3` | 218 | `data/sample_manifest_raw.csv`, `outputs/datapackage_curated.yaml`, `dictgen.py` |
 | `outputs/validation_report_batch2.csv` | `1b09c4d224fb408a` | 393 | `data/sample_manifest_batch2.csv`, `outputs/datapackage_curated.yaml`, `dictgen.py` |
 | `rebuild.py` | `98cac88ac30eebd3` | 9192 | -- |
-| `test_dictgen.py` | `98c6f116d01b10f8` | 12849 | -- |
+| `test_dictgen.py` | `db2bcb76a33b451c` | 13763 | -- |
 | `validate_sql.py` | `4bedd27ce47eae13` | 6522 | -- |
 
 ## Reproduction

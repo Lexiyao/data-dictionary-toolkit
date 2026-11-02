@@ -114,6 +114,16 @@ def _plain_list(values) -> list:
     return [_plain(v) for v in values]
 
 
+def _is_text(s: pd.Series) -> bool:
+    """Whether a column holds text, whatever dtype pandas stores it in.
+
+    pandas 2 reads text as `object`; pandas 3 reads it as `str`. Every blank-cell,
+    whitespace, case-variant, date-format and sentinel check used to be gated on
+    `s.dtype == object`, so under pandas 3 none of them ran and the report came
+    back clean. A check that did not run must not look like a check that passed."""
+    return pd.api.types.is_object_dtype(s) or pd.api.types.is_string_dtype(s)
+
+
 def _norm_token(value) -> str:
     """Render any value as the canonical string token used for vocabulary
     comparison. Numeric codes are the trap here: a `sex` column coded 1/2 is
@@ -180,7 +190,7 @@ def _hygiene_flags(s: pd.Series, nonnull: pd.Series, n_rows: int) -> list[str]:
     flags = []
     n_null = int(s.isna().sum())
     n_blank = 0
-    if s.dtype == object:
+    if _is_text(s):
         text = s.dropna().astype(str).str.strip()
         n_blank = int((text == "").sum())
         if n_blank:
@@ -195,7 +205,7 @@ def _hygiene_flags(s: pd.Series, nonnull: pd.Series, n_rows: int) -> list[str]:
     if len(nonnull) and nonnull.nunique(dropna=True) == 1 and coverage >= CONSTANT_FLAG_MIN_COVERAGE:
         flags.append("single constant value -- belongs in dataset-level metadata, not a column")
 
-    if s.dtype == object and len(nonnull):
+    if _is_text(s) and len(nonnull):
         vals = nonnull.astype(str)
         if (vals != vals.str.strip()).any():
             flags.append("leading/trailing whitespace present")
@@ -239,7 +249,7 @@ def profile_table(df: pd.DataFrame) -> list[dict]:
     for name in df.columns:
         s = df[name]
         nonnull = s.dropna()
-        if s.dtype == object:
+        if _is_text(s):
             nonnull = nonnull[nonnull.astype(str).str.strip() != ""]
         n_unique = int(nonnull.nunique())
         rec: dict = {
@@ -269,7 +279,7 @@ def profile_table(df: pd.DataFrame) -> list[dict]:
         # (those are quantities and flags, not vocabularies -- and their
         # rendering shifts with dtype, which silently invalidates a frozen set).
         looks_prose = False
-        if s.dtype == object and len(nonnull):
+        if _is_text(s) and len(nonnull):
             vals = nonnull.astype(str)
             looks_prose = bool(
                 (vals.str.len().median() > 25)
@@ -537,7 +547,7 @@ def validate(df: pd.DataFrame, datapackage: dict) -> pd.DataFrame:
             continue
         s = df[name]
         nonnull = s.dropna()
-        if s.dtype == object:
+        if _is_text(s):
             nonnull = nonnull[nonnull.astype(str).str.strip() != ""]
         if f.get("required") and len(nonnull) < len(s):
             add("error", name, "required", f"{len(s) - len(nonnull)} missing value(s)")

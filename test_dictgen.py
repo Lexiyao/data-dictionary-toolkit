@@ -208,6 +208,21 @@ def test_entirely_blank_column_is_flagged():
     assert any("entirely empty" in m for m in f["issues"])
 
 
+def test_text_checks_run_whatever_dtype_carries_the_strings():
+    # pandas 3 reads text as the `str` dtype, pandas 2 as `object`. The text
+    # checks were gated on `dtype == object`, so under pandas 3 a blank required
+    # cell validated clean and every hygiene flag vanished, with exit code 0.
+    # `dtype="string"` reproduces that on either major version.
+    df = pd.DataFrame({"t": pd.array(["Kidney", "kidney ", " ", "kidney"], dtype="string")})
+    f = dg.profile_table(df)[0]
+    assert f["n_missing"] == 1, "a blank cell is missing whichever dtype holds it"
+    assert any("empty-string" in m for m in f["issues"])
+    assert any("variants collapse" in m for m in f["issues"])
+    assert any("whitespace present" in m for m in f["issues"])
+    report = dg.validate(df, _pkg([{"name": "t", "required": True}]))
+    assert (report["check"] == "required").any(), "blank required cell must be reported"
+
+
 def test_zero_row_batch_is_not_silently_clean():
     field = {"name": "a", "required": True}
     report = dg.validate(pd.DataFrame({"a": pd.Series([], dtype=object)}), _pkg([field]))
