@@ -26,7 +26,8 @@ jobs:
       - run: python test_dictgen.py
       - name: validate_sql.py must agree with the pandas validator
         shell: bash
-        run: python validate_sql.py | tee /dev/stderr | tail -n 1 | grep -x "agreement: IDENTICAL"
+        run: |
+          python validate_sql.py | tee /dev/stderr | tail -n 1 | grep -x "agreement: IDENTICAL"
       # The validation reports must come out of a fresh run unchanged. The
       # dictionaries are not compared: they carry a timestamp, and under
       # pandas 3 they record `str` where pandas 2 recorded `object`.
