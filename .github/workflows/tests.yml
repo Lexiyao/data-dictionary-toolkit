@@ -1,0 +1,36 @@
+name: tests
+
+# The README quick start, run on both pandas majors. pandas 2 reads text
+# columns as object and pandas 3 as str; the text checks must behave the same
+# on either (see DESIGN_NOTES.md, "Ask whether a column is text").
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  quick-start:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        pandas: ["pandas>=2,<3", "pandas>=3,<4"]
+    name: ${{ matrix.pandas }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt "${{ matrix.pandas }}"
+      - run: python -c "import pandas; print('pandas', pandas.__version__)"
+      - run: python test_dictgen.py
+      - name: validate_sql.py must agree with the pandas validator
+        shell: bash
+        run: python validate_sql.py | tee /dev/stderr | tail -n 1 | grep -x "agreement: IDENTICAL"
+      # The validation reports must come out of a fresh run unchanged. The
+      # dictionaries are not compared: they carry a timestamp, and under
+      # pandas 3 they record `str` where pandas 2 recorded `object`.
+      - name: rebuild.py reproduces the committed validation reports
+        run: |
+          python rebuild.py
+          git diff --exit-code -- outputs/validation_raw_after.csv outputs/validation_report_batch2.csv

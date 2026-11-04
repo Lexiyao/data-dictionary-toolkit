@@ -79,8 +79,8 @@
       "name": "README.md",
       "description": "Project overview, lifecycle and design decisions.",
       "encodingFormat": "text/markdown",
-      "contentSize": 5157,
-      "sha256": "399b9ebb2aaa8729f5237a59f96ff729f11dcd292c6ff1a85ebdbc9f157836d9"
+      "contentSize": 5283,
+      "sha256": "df5dfe41b7a096ba2979882fc723f917d0afadde4d9a29b46521ec4ed8b1a2ba"
     },
     {
       "@id": "data/sample_manifest_batch2.csv",

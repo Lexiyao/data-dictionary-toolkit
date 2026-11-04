@@ -45,6 +45,9 @@ python make_ro_crate.py   # regenerate the provenance record + RO-Crate
 python test_dictgen.py    # 29 regression tests (or: pytest)
 ```
 
+The same four commands run in CI on every push, once under pandas 2 and once
+under pandas 3 (`.github/workflows/tests.yml`).
+
 ## Library use
 
 ```python
